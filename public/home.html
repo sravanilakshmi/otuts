@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="styles/bootstrap.css" rel="stylesheet"/>
+    <link href="styles/mystyle.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="js/bootstrap-tabs.js"></script>
+
+    <script>
+        $(function () {
+            $('#topbar').dropdown()
+        });
+    </script>
+</head>
+<body>
+<div data-scrollspy="scrollspy" class="topbar">
+    <div class="topbar-inner" data-dropdown="dropdown">
+        <div class="container">
+            <h3><a href="home.html">Otuts</a></h3>
+            <ul class="nav">
+                <li class="active"><a href="home.html">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Feedback</a></li>
+            </ul>
+            <form class="pull-left" action="">
+                <input type="text" placeholder="search" class="span5">
+            </form>
+            <ul class="nav secondary-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#">Dropdown</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="register.html">Register</a></li>
+                        <li class="divider"></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="main-container">
+    <div class="container">
+        <div class="main-container">
+            <div class="row">
+                <div class="span13">
+                    <div class="row">
+                        <div class="span4">
+                            <ul class="media-grid">
+                                <li>
+                                    <a href="show.html">
+                                        <img alt=""
+                                             src="http://www.railscasts.com/assets/episodes/stills/299-rails-initialization-walkthrough.png?1321344418"
+                                             height="125" width="200" class="thumbnail"/>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="span9">
+                            <h2><a href="show.html">Title Of The Tutorial1</a></h2>
+
+                            <p>Hi , This is Sravana Lakshmi</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span4">
+                            <ul class="media-grid">
+                                <li>
+                                    <a href="show.html">
+                                        <img alt=""
+                                             src="http://www.railscasts.com/assets/episodes/stills/299-rails-initialization-walkthrough.png?1321344418"
+                                             height="125" width="200" class="thumbnail"/>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="span6">
+                            <h2><a href="show.html">Title Of The Tutorial1</a></h2>
+
+                            <p>Hi , This is Sravana Lakshmi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="span3">
+                    <ul>
+                        <h2>Contents</h2>
+                        <ul>
+                            <li><a href="home.html">Java</a></li>
+                            <li><a href="home.html">Rails</a></li>
+                            <li><a href="home.html">Php</a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="well">
+            <a class="btn" href="login.html">New</a>
+            <a class="btn" href="home.html">Back</a>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

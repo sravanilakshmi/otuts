@@ -1,0 +1,101 @@
+<% content_for :head do %>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            var tags = <%= raw @tags %>
+                    $("#tags").tokenInput(tags, {
+                        "tokenValue" : "name"
+                    });
+
+            $("#tutorial_notes").bind("blur", function() {
+                var code = $(this).val();
+
+                // here we have to send the request to server and get the html content
+                $.ajax({
+                    url: '<%= get_coderay_tutorials_path %>',
+                    data : { "text" : code },
+                    success: function(data) {
+                        $("#coderay-notes").html(data);
+                    }
+                });
+            });
+        });
+    </script>
+<% end %>
+
+<div class="container">
+  <div class="main-container">
+    <div class="row">
+      <div class="span12">
+        <%= form_for @tutorial, :validate => true do |form| %>
+            <fieldset>
+              <legend>Add the New Tutorial</legend>
+              <div class="clearfix">
+                <label for="xlInput">Title <span style="color: red">*</span> </label>
+
+                <div class="input">
+                  <%= form.text_field :title, :class => "xlarge", :placeholder => 'Enter title of the tutorial' %>
+                </div>
+              </div>
+              <div class="clearfix">
+                <label for="xlInput">Tags <span style="color: red">*</span> </label>
+
+                <div class="input">
+                  <%= text_field_tag :tags %>
+                </div>
+              </div>
+              <div class="clearfix">
+                <label for="textarea">Description</label>
+
+                <div class="input">
+                  <%= form.text_area :description, :class => "xlarge", :placeholder => 'Enter description' %>
+                </div>
+              </div>
+              <div class="clearfix">
+                <label for="xlInput">Image-Url <span style="color: red">*</span> </label>
+
+                <div class="input">
+                  <%= form.text_field :image_url, :class => "xlarge", :placeholder => 'Enter image url' %>
+
+                </div>
+              </div>
+              <div class="clearfix">
+                <label for="xlInput">Video <span style="color: red">*</span> </label>
+
+                <div class="input">
+                  <%= form.text_field :video, :class => "xlarge", :placeholder => 'Enter video url' %>
+
+                </div>
+              </div>
+              <div class="clearfix">
+                <label for="textarea">Notes</label>
+
+                <div class="input">
+                  <%= form.text_area :notes, :class => "xlarge", :placeholder => 'Enter tags for the tutorial', :rows => '3', :id => "tutorial_notes" %>
+                </div>
+              </div>
+              <div class="clearfix">
+                <label for="textarea">Actual Code</label>
+
+                <div id="coderay-notes" class="input">
+
+                </div>
+              </div>
+              <div class="actions">
+                <input type="submit" value="Submit" class="btn primary">&nbsp;
+                <button class="btn" type="reset">Cancel</button>
+              </div>
+              <div class="pagination">
+                <ul>
+                  <li class="prev"><%= link_to '<-- Back', tutorials_path %></li>
+                </ul>
+              </div>
+              <br/><br/>
+            </fieldset>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

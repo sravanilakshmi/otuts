@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="styles/bootstrap.css" rel="stylesheet"/>
+    <link href="styles/mystyle.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="js/bootstrap-tabs.js"></script>
+
+    <script>
+        $(function () {
+            $('#topbar').dropdown()
+        });
+    </script>
+</head>
+<body>
+<div data-scrollspy="scrollspy" class="topbar">
+    <div class="topbar-inner" data-dropdown="dropdown">
+        <div class="container">
+            <h3><a href="home.html">Otuts</a></h3>
+            <ul class="nav">
+                <li class="active"><a href="home.html">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Feedback</a></li>
+            </ul>
+            <form class="pull-left" action="">
+                <input type="text" placeholder="search" class="span5">
+            </form>
+            <ul class="nav secondary-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#">Dropdown</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="register.html">Register</a></li>
+                        <li class="divider"></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="main-container">
+    <div class="container">
+        <div class="main-container">
+            <div class="row">
+                <div class="span12">
+                    <form>
+                        <fieldset>
+                            <legend>Register To Otuts</legend>
+                            <div class="clearfix">
+                                <label for="xlInput">Username <span style="color: red">*</span> </label>
+
+                                <div class="input">
+                                    <input class="xlarge" type="text" placeholder="some text here" name="username"/>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <label for="xlInput">Email <span style="color: red">*</span> </label>
+
+                                <div class="input">
+                                    <input class="xlarge" type="text" placeholder="some text here" name="xlInput"/>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <label for="xlInput">Passsword <span style="color: red">*</span> </label>
+
+                                <div class="input">
+                                    <input type="password" class="xlarge" placeholder="some text here"/>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <label for="xlInput">Passsword Confirmation <span style="color: red">*</span> </label>
+
+                                <div class="input">
+                                    <input type="password" class="xlarge" placeholder="some text here"/>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <input type="submit" value="Submit" class="btn primary">&nbsp;
+                                <button class="btn" type="reset">Cancel</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

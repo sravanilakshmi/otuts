@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="styles/bootstrap.css" rel="stylesheet"/>
+    <link href="styles/mystyle.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="js/bootstrap-tabs.js"></script>
+    <script>
+        $(function () {
+            $('.tabs').tabs()
+        });
+    </script>
+    <script>
+        $(function () {
+            $('#topbar').dropdown()
+        });
+    </script>
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {
+        return;
+    }
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=290815190953271";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div data-scrollspy="scrollspy" class="topbar">
+    <div class="topbar-inner" data-dropdown="dropdown">
+        <div class="container">
+            <h3><a href="home.html">Otuts</a></h3>
+            <ul class="nav">
+                <li class="active"><a href="home.html">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Feedback</a></li>
+            </ul>
+            <form class="pull-left" action="">
+                <input type="text" placeholder="search" class="span5">
+            </form>
+            <ul class="nav secondary-nav">
+                <li class="dropdown" data-dropdown="dropdown">
+                    <a class="dropdown-toggle" href="#">Dropdown</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="register.html">Register</a></li>
+                        <li class="divider"></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="main-container">
+    <div class="container">
+        <div class="main-container">
+            <div class="row">
+                <div class="span13">
+                    <div class="row">
+                        <div class="span4">
+                            <ul class="media-grid">
+                                <li>
+                                    <img alt=""
+                                         src="http://www.railscasts.com/assets/episodes/stills/299-rails-initialization-walkthrough.png?1321344418"
+                                         height="125" width="200" class="thumbnail"/>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="span9">
+                            <h2>Title Of The Tutorial1</h2>
+                            <p>Hi , This is Sravana Lakshmi</p>
+                            <a class="btn primary" href="">Play Video</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-container">
+            <ul class="tabs" data-tabs="tabs">
+                <li class="active"><a href="#notes">Show Notes</a></li>
+                <li><a href="#video">Show Video</a></li>
+                <li><a href="#comments">Comments</a></li>
+                <li><a href="#similar">Similar Tutorials</a></li>
+            </ul>
+            <div class="tab-content" id="my-tab-content">
+                <div id="notes" class="tab-pane active">
+                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua,
+                        retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.
+                        Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure
+                        terry
+                        richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american
+                        apparel, butcher voluptate nisi qui.</p>
+                </div>
+                <div id="video" class="tab-pane">
+                    <div style="border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; width: 560px; height: 340px;">
+                        <div style="width:560px;height:340px;overflow: hidden;position:relative;">
+                            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="560" height="340">
+                                <param name="movie" value="http://www.youtube.com/v/IVJVCoHDAXs&amp;autoplay=1">
+                                <param name="wmode" value="transparent">
+                                <embed src="http://www.youtube.com/v/IVJVCoHDAXs&amp;autoplay=1"
+                                       type="application/x-shockwave-flash" width="560" height="340"
+                                       wmode="transparent">
+                            </object>
+                        </div>
+                    </div>
+                </div>
+                <div id="comments" class="tab-pane">
+                    <div class="fb-comments" data-href="http://local.otuts.com" data-num-posts="2"
+                         data-width="500"></div>
+                </div>
+                <div id="similar" class="tab-pane">
+                    <div class="main-container">
+                        <div class="row">
+
+                            <div class="span13">
+                                <div class="row">
+                                    <div class="span4">
+                                        <ul class="media-grid">
+                                            <li>
+                                                <a href="show.html">
+                                                    <img alt=""
+                                                         src="http://www.railscasts.com/assets/episodes/stills/299-rails-initialization-walkthrough.png?1321344418"
+                                                         height="125" width="200" class="thumbnail"/>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="span9">
+                                        <h2><a href="show.html">Title Of The Tutorial1</a></h2>
+                                        <p>Hi , This is Sravana Lakshmi</p>
+                                        <a class="btn" href="#">Play Video</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>s
+                <div class="main-container">
+                </div>
+                <a class="btn" href="newtut.html">Edit</a>
+                <a class="btn" href="home.html">Back</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

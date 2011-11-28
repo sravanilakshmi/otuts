@@ -1,0 +1,96 @@
+<% content_for :head do %>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#notes-content").show();
+            $("#note-link").bind("click", function() {
+                $("#notes-content").toggle();
+                return false;
+            });
+
+            $("#video-link").click(function() {
+                var autoPlay = (this.href.indexOf("?") != -1 ? "&" : "?") + "autoplay=1";
+                $.fancybox({
+                    'href' : this.href.replace(new RegExp("watch\\?v=", "i"), 'v/') + autoPlay,
+                    'type' : 'swf'
+                });
+                return false;
+            });
+
+        });
+    </script>
+<% end %>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {
+        return;
+    }
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=290815190953271";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<% url = @tutorial.video.split('?v=')[1].split('&')[0] %>
+<div class="container">
+  <div class="main-container">
+    <div class="row">
+      <div class="span13">
+        <div class="row">
+          <div class="span4">
+            <ul class="media-grid">
+              <li>
+                <%= image_tag(@tutorial.image_url, :width => 250, :height => 150, :class => "thumbnail") %>
+
+              </li>
+            </ul>
+          </div>
+          <div class="span9">
+            <%= @tutorial.created_at.strftime("%b %d, %Y") %>
+            <h2><%= @tutorial.title %></h2>
+
+            <p><%= truncate(strip_tags(@tutorial.description), :length => 80) %></p>
+
+            <%= link_to "Play Video", @tutorial.video, :id => 'video-link', :class => "btn primary" %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="main-container">
+
+    <ul class="tabs" data-tabs="tabs">
+      <li class="active"><a href="#notes">Show Notes</a></li>
+      <li><a href="#video">Show Video</a></li>
+      <li><a href="#comments">Comments</a></li>
+    </ul>
+
+    <div class="tab-content" id="my-tab-content">
+
+      <div id="notes" class="tab-pane active">
+        <div id="notes-content"><br/><br/>
+          <%= raw coderay(@tutorial.notes) %>
+        </div>
+      </div>
+
+      <div id="video" class="tab-pane">
+        <iframe width="420" height="315" src="http://www.youtube.com/embed/<%= url %>?autoplay=1" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div id="comments" class="tab-pane">
+        <div class="fb-comments" data-href="<%= request.host %>/<%= request.fullpath %>" data-num-posts="2" data-width="500"></div>
+      </div>
+
+    </div>
+  </div>
+  <div>
+    <div class="main-container"></div>
+    <div class="btn"> <%= link_to 'Back', tutorials_path %> </div>
+    <div class="btn"> <%= link_to 'Edit', edit_tutorial_path %> </div>
+  </div>
+</div>
+

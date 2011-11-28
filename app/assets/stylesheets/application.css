@@ -1,0 +1,24 @@
+/*
+*= require_self
+*= require_tree .
+*= require fancybox
+*/
+/* rest of file omitted */
+.field_with_errors {
+  display: inline;
+}
+
+.field_with_errors .message,.error {
+  color: #D00;
+  padding-left: 5px;
+  font-size: 12px;
+}
+
+.main-container {
+    padding-top: 40px;
+}
+
+.input label {
+    float : none;
+}
+.disabled { color: #999; }

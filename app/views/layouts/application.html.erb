@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Otuts</title>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application", "rails.validations" %>
+
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $("a.fancybox").fancybox();
+
+          //$('#topbar').dropdown();
+      });
+  </script>
+  <%= csrf_meta_tag %>
+  <%= yield :head %>
+</head>
+<body>
+
+<div data-scrollspy="scrollspy" class="topbar">
+  <div class="topbar-inner" data-dropdown="dropdown">
+    <div class="container">
+      <h3><%= link_to 'Otuts', tutorials_path %></h3>
+      <ul class="nav">
+        <li class="active"><%= link_to 'Home', tutorials_path %></li>
+        <li><%= link_to 'About', tutorials_path %></li>
+        <li><%= link_to 'Feedback', tutorials_path %></li>
+      </ul>
+      <%= form_tag("", :method => "get") do %>
+          <%= text_field_tag 'top_search_field', nil, :placeholder => 'Enter search term' %>
+      <% end %>
+      
+
+      <ul class="nav secondary-nav">
+        <li class="dropdown">
+          <% if current_user %>
+              <%= link_to current_user.username, "#", :class => 'dropdown-toggle' %>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
+                <li class="divider"></li>
+                <li><%= link_to "Logout", logout_path %></li>
+              </ul>
+          <% else %>
+              <%= link_to "Guest", "#", :class => 'dropdown-toggle' %>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Register", new_user_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to "Login", new_user_session_path, :class => 'fancybox' %></li>
+              </ul>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="main-container" style="background : url('http://a3.twimg.com/a/1321984775/images/bg-clouds.png') repeat-x scroll 0 0 #C0DEED;">
+  <%= yield %>
+</div>
+
+</body>
+</html>
+

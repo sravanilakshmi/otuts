@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="main-container">
+    <div class="row">
+      <div class="span12">
+        <%= form_for @user, :validate => true do |form| %>
+            <fieldset>
+              <legend>Register To Otuts</legend>
+              <div class="clearfix">
+                <label for="xlInput">Username <span style="color: red">*</span> </label>
+
+                <div class="input">
+                  <%= form.text_field :username, :class => "xlarge", :placeholder => 'Enter username' %>
+                </div>
+              </div>
+              <div class="clearfix">
+                <label for="xlInput">Email <span style="color: red">*</span> </label>
+
+                <div class="input">
+                  <%= form.text_field :email, :class => "xlarge", :placeholder => 'Enter email address' %>
+                </div>
+              </div>
+              <div class="clearfix">
+                <label for="xlInput">Passsword <span style="color: red">*</span> </label>
+
+                <div class="input">
+                  <%= form.password_field :password, :class => "xlarge", :placeholder => 'Enter password' %>
+                </div>
+              </div>
+              <div class="clearfix">
+                <label for="xlInput">Passsword Confirmation <span style="color: red">*</span> </label>
+
+                <div class="input">
+                  <%= form.password_field :password_confirmation, :class => "xlarge", :placeholder => 'Retype password' %>
+                </div>
+              </div>
+              <div class="actions">
+                <input type="submit" value="Submit" class="btn primary">&nbsp;
+                <button class="btn" type="reset">Cancel</button>
+              </div>
+            </fieldset>
+
+            <div class="pagination">
+              <ul>
+                <li> <%= link_to "<--Back", root_path, :class => 'prev' %></li>
+              </ul>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

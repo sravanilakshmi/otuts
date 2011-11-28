@@ -1,0 +1,49 @@
+<div class="container">
+
+  <div class="main-container">
+    <div class="row">
+      <div class="span13">
+        <!-- each tutorial -->
+        <% @tutorials.each do |tutorial| %>
+
+            <div class="row">
+              <div class="span4">
+                <ul class="media-grid">
+                  <li>
+                    <%= link_to image_tag(tutorial.image_url, :width => 200, :height => 125), tutorial_path(tutorial) %>
+                  </li>
+                </ul>
+              </div>
+              <div class="span9">
+                <%= tutorial.created_at.strftime("%b %d, %Y") %>
+                <h2><%= link_to tutorial.title, tutorial_path(tutorial) %></h2>
+
+                <p><%= truncate(strip_tags(tutorial.description), :length => 80) %></p>
+              </div>
+            </div>
+        <% end %>
+      </div>
+      <div class="span3">
+        <ul>
+          <h2>Contents</h2>
+          <ul>
+            <% @tags.each do |tag| %>
+                <li><%= link_to tag.name, tutorials_path(:tags => tag.name) %></li>
+            <% end %>
+          </ul>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="well">
+    <% if current_user %>
+        <%= link_to "New", new_tutorial_path, :class => 'btn' %>
+    <% else %>
+        <%= link_to "New", new_tutorial_path, :class => 'btn fancybox' %>
+    <% end %>
+
+    <%= link_to "Back", root_path, :class => 'btn' %>
+
+  </div>
+  <%= paginate @tutorials %>
+</div>
