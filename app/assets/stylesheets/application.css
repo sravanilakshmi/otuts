@@ -15,10 +15,14 @@
 }
 
 .main-container {
-    padding-top: 40px;
+
+   padding-top: 60px;
+    background: white;
+    padding-left: 10px;
 }
 
 .input label {
     float : none;
 }
 .disabled { color: #999; }
+

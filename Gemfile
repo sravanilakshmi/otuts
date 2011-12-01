@@ -63,9 +63,7 @@ gem 'fancybox-rails'
 gem "meta_search"
 gem "kaminari"
 
-group :production do
-  gem 'pg'
-end
+
 gem 'thin'
 
 gem 'therubyracer', require: "v8"

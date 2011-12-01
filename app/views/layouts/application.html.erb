@@ -29,7 +29,7 @@
       <%= form_tag("", :method => "get") do %>
           <%= text_field_tag 'top_search_field', nil, :placeholder => 'Enter search term' %>
       <% end %>
-      
+
 
       <ul class="nav secondary-nav">
         <li class="dropdown">
@@ -55,6 +55,7 @@
 </div>
 
 <div class="main-container" style="background : url('http://a3.twimg.com/a/1321984775/images/bg-clouds.png') repeat-x scroll 0 0 #C0DEED;">
+  
   <%= yield %>
 </div>
 
